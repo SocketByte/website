@@ -163,7 +163,16 @@ main > section > .container > .item {
 }
 
 main > section > .container > .item > p {
-    opacity: 50%;
+    background: linear-gradient(to right, #0269bf, #01a7db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon-aside {
+    background: linear-gradient(to right, #038cfc, #01c0fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right: 10px;
 }
 
 main > section > .container > .item > h1 {
@@ -202,11 +211,11 @@ nav > * {
 }
 
 nav > .left {
-    margin-left: 22.5vw;
+    margin-left: 20vw;
 }
 
 nav > .right {
-    margin-right: 22.5vw;
+    margin-right: 20vw;
     justify-content: space-around;
     align-items: stretch;
 }
