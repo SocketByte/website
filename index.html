@@ -7,8 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/b1190a009c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.10.0/rellax.js" integrity="sha256-b9iCa+uXg1ls4OGWXZY7fTQVTEgK46A+Yy6gjTrRg3U=" crossorigin="anonymous"></script>
 </head>
 <body>
 <nav>
@@ -20,37 +23,123 @@
             <a href="#skills"><i class="fas fa-graduation-cap icon"></i>Skills</a>
         </div>
         <div class="item">
-            <a href="#features"><i class="fas fa-code icon"></i>Features</a>
+            <a href="#funfacts"><i class="fas fa-info-circle icon"></i>Fun facts</a>
         </div>
         <div class="item">
-            <a href="#testimonials"><i class="fas fa-smile icon"></i>Testimonials</a>
+            <a href="#features"><i class="fas fa-code icon"></i>Features</a>
         </div>
         <div class="item">
             <a href="#contact"><i class="fas fa-address-book icon"></i>Contact</a>
         </div>
     </div>
 </nav>
+
 <header>
-    <h1>Best programming services you'll ever encounter in this Galaxy</h1>
+    <div class="behind">
+        <img src="images/triangle-bottom-left.png"
+             class="rellax" data-rellax-speed="6" id="t1">
+        <img src="images/triangle-top-right.png"
+             class="rellax" data-rellax-speed="-6" id="t2">
+    </div>
+
+    <h1>Professional programming services</h1>
+    <h3>for everyone!</h3>
+
+    <a class="outlined" href="#skills">I am interested</a>
 </header>
 <main>
     <section id="skills">
-        <p>lol</p>
-        <p>lol</p>
-        <p>lol</p>
-        <p>lol</p>
-        <p>lol</p>
-
+        <div class="header">
+            <h1 class="title">Skills</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="container">
+            <div class="item">
+                <i class="devicon-java-plain icon"></i>
+                <h1>Java + Kotlin</h1>
+                <p>Over 6 years of experience <br>in Java & Bukkit</p>
+            </div>
+            <div class="item">
+                <i class="devicon-mysql-plain icon"></i>
+                <h1>MySQL + Redis</h1>
+                <p>Ability to make <br>high-performance apps that make use of MySQL & Redis</p>
+            </div>
+            <div class="item">
+                <i class="devicon-go-plain icon"></i>
+                <h1>Go</h1>
+                <p>Ability to make advanced HTTP and TCP/UDP servers and clients</p>
+            </div>
+            <div class="item">
+                <i class="devicon-python-plain icon"></i>
+                <h1>Python</h1>
+                <p>Fast prototyping, web servers and basic ML algorithms</p>
+            </div>
+            <div class="item">
+                <i class="devicon-javascript-plain icon"></i>
+                <h1>JS + Electron</h1>
+                <p>Ability to make Electron apps and web JS-heavy apps</p>
+            </div>
+            <div class="item">
+                <i class="devicon-csharp-plain icon"></i>
+                <h1>C# .NET + Unity</h1>
+                <p>Unity Scripting and .NET platform, including ASP.NET</p>
+            </div>
+        </div>
     </section>
+
+    <section id="funfacts">
+        <div class="header">
+            <h1 class="title">Fun facts</h1>
+            <div class="divider"></div>
+        </div>
+        <div class="container">
+            <div class="item">
+                <p>Happy customers</p>
+                <h1 class="count">126</h1>
+            </div>
+            <div class="item">
+                <p>Total lines of code (approx.)</p>
+                <h1 class="count">300000</h1>
+            </div>
+            <div class="item">
+                <p>Years of experience</p>
+                <h1 class="count">6</h1>
+            </div>
+        </div>
+    </section>
+
     <section id="features">
-
-    </section>
-    <section id="testimonials">
 
     </section>
 </main>
 <footer id="contact">
     <p>Copyright &copy; 2019 | All rights reserved</p>
 </footer>
+<script>
+    // Accepts any class name
+    var rellax = new Rellax('.rellax');
+
+    var reached = false;
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() >= $(
+            '#funfacts').offset().top + $('#funfacts').
+        outerHeight() - window.innerHeight - 75) {
+            if (reached)
+                return;
+            reached = true;
+            $('.count').each(function () {
+                $(this).prop('Counter',0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 5000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        }
+    });
+</script>
 </body>
 </html>
