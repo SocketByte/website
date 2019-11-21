@@ -48,17 +48,17 @@ header {
 header > .behind {
     z-index: -1;
     position: absolute;
+    height: 40vh;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
-header > .behind > #t1 {
-    width: 300px;
-    margin-right: 1000px;
-    margin-top: 500px;
-}
-
-header > .behind > #t2 {
-    width: 300px;
-    margin-bottom: 500px;
+header > .behind > #arrow {
+    width: 2px;
+    height: 50px;
+    opacity: 60%;
 }
 
 header > * {

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>socketbyte.pl</title>
 
+    <link rel="shortcut icon" href="images/favicon.png" />
+
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -26,7 +28,10 @@
             <a href="#funfacts"><i class="fas fa-info-circle icon"></i>Fun facts</a>
         </div>
         <div class="item">
-            <a href="#features"><i class="fas fa-code icon"></i>Features</a>
+            <a href="#features"><i class="fas fa-code icon"></i>Why me?</a>
+        </div>
+        <div class="item">
+            <a href="#portfolio"><i class="fab fa-github icon"></i>Portfolio</a>
         </div>
         <div class="item">
             <a href="#contact"><i class="fas fa-address-book icon"></i>Contact</a>
@@ -35,11 +40,7 @@
 </nav>
 
 <header>
-    <div class="behind">
-        <img src="images/triangle-bottom-left.png"
-             class="rellax" data-rellax-speed="6" id="t1">
-        <img src="images/triangle-top-right.png"
-             class="rellax" data-rellax-speed="-6" id="t2">
+    <div class="behind" id="behind">
     </div>
 
     <h1>Professional programming services</h1>
@@ -54,10 +55,10 @@
             <div class="divider"></div>
         </div>
         <div class="container">
-            <div class="item">
+            <div class="item" class="rellax-horizontal" data-rellax-speed="4">
                 <i class="devicon-java-plain icon"></i>
                 <h1>Java + Kotlin</h1>
-                <p>Over 6 years of experience <br>in Java & Bukkit</p>
+                <p class="rellax-horizontal" data-rellax-speed="4">Over 6 years of experience <br>in Java & Bukkit</p>
             </div>
             <div class="item">
                 <i class="devicon-mysql-plain icon"></i>
@@ -69,7 +70,7 @@
                 <h1>Go</h1>
                 <p>Ability to make advanced HTTP and TCP/UDP servers and clients</p>
             </div>
-            <div class="item">
+            <div class="item" class="rellax" data-rellax-speed="2">
                 <i class="devicon-python-plain icon"></i>
                 <h1>Python</h1>
                 <p>Fast prototyping, web servers and basic ML algorithms</p>
@@ -94,7 +95,7 @@
         </div>
         <div class="container">
             <div class="item">
-                <p><i class="far fa-smile icon-aside"></i></i>Happy customers</p>
+                <p><i class="far fa-smile icon-aside"></i>Happy customers</p>
                 <h1 class="count">126</h1>
             </div>
             <div class="item">
@@ -109,8 +110,7 @@
     </section>
 
     <section id="features">
-        <h2>-- Work in progress. --</h2>
-        <br><br>
+
     </section>
 </main>
 <footer id="contact">
@@ -118,7 +118,24 @@
 </footer>
 <script>
     // Accepts any class name
+
+    function getRandomInt(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    // let div = document.getElementById("behind");
+    // for (let i = 0; i < 25; i++) {
+    //     console.log(div.innerHTML);
+    //     let randomMargin = getRandomInt(30, 100);
+    //     div.innerHTML += "<img style=\"margin-top:" + getRandomInt(1000, 1600) + "px;margin-left:" + randomMargin + "px;margin-right:" + randomMargin + "px\" src=\"images/arrow.png\"\n" +
+    //         "             class=\"rellax\" data-rellax-speed=" + getRandomInt(5, 50) + " id=\"arrow\">"
+    // }
+
     var rellax = new Rellax('.rellax');
+
+    var rellaxHor = new Rellax('.rellax-horizontal', {
+        horizontal: true
+    });
 
     var reached = false;
     $(window).on('scroll', function() {
